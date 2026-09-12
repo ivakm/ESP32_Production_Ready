@@ -1,6 +1,10 @@
 #include <Arduino.h>
+#include <RadioLib.h>
 #include "version.h"
 #include "config.h"
+#include "post.h"
+
+SX1276 radio = new Module(18, 26, 23, 33);
 
 void setup()
 {
@@ -12,6 +16,8 @@ void setup()
 
   config_load();
   config_get();
+
+  uint8_t post_result = post_run();
 }
 
 void loop()
