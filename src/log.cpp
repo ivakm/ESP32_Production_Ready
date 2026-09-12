@@ -1,4 +1,6 @@
 #include "log.h"
+#include <Arduino.h>
+#include <cstring>
 
 Record record[10];
 static unsigned int currentIdx = 0;
